@@ -58,7 +58,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"p-1 bg-light rounded rounded-pill shadow-sm mb-4\">\n<div class=\"input-group\">\n    <div class=\"input-group-prepend\">\n      <button id=\"button-addon2\" type=\"submit\" class=\"btn btn-link text-warning\"><i class=\"fa fa-search\"></i></button>\n    </div>\n    <input type=\"search\" placeholder=\"What're you searching for?\" aria-describedby=\"button-addon2\" class=\"form-control border-0 bg-light\">\n  </div>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("\n<mat-form-field class=\"demo-chip-list\">\n  <mat-chip-list #chipList>\n    <mat-chip\n      *ngFor=\"let product of Products\"\n      [selectable]=\"selectable\"\n      [removable]=\"removable\"\n      (removed)=\"remove(product)\">\n      {{product}}\n      <mat-icon matChipRemove *ngIf=\"removable\">cancel</mat-icon>\n    </mat-chip>\n    <input\n      placeholder=\"Whats Your choice...\"\n      #productInput\n      [formControl]=\"productCtrl\"\n      [matAutocomplete]=\"auto\"\n      [matChipInputFor]=\"chipList\"\n      [matChipInputSeparatorKeyCodes]=\"separatorKeysCodes\"\n      [matChipInputAddOnBlur]=\"addOnBlur\"\n      (matChipInputTokenEnd)=\"add($event)\"\n      \n    />\n  </mat-chip-list>\n  <mat-autocomplete #auto=\"matAutocomplete\" (optionSelected)=\"selected($event)\" >\n    <mat-option *ngFor=\"let product of filtereProducts | async\" [value]=\"product\" (change)=\"onFoodSelection1()\">\n      {{ product }}\n    </mat-option>\n  </mat-autocomplete>\n</mat-form-field>\n\n");
 
 /***/ }),
 
@@ -384,6 +384,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
 /* harmony import */ var _products_list_products_list_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./products-list/products-list.component */ "./src/app/products-list/products-list.component.ts");
 /* harmony import */ var _search_products_search_products_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./search-products/search-products.component */ "./src/app/search-products/search-products.component.ts");
+/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/fesm2015/ng-bootstrap.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm2015/animations.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm2015/material.js");
+
+
+
+
 
 
 
@@ -400,12 +408,22 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         declarations: [
             _app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"],
             _products_list_products_list_component__WEBPACK_IMPORTED_MODULE_7__["ProductsListComponent"],
-            _search_products_search_products_component__WEBPACK_IMPORTED_MODULE_8__["SearchProductsComponent"]
+            _search_products_search_products_component__WEBPACK_IMPORTED_MODULE_8__["SearchProductsComponent"],
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
             _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"],
-            _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HttpClientModule"]
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HttpClientModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_10__["FormsModule"],
+            _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_9__["NgbModule"],
+            _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_11__["BrowserAnimationsModule"],
+            _angular_material__WEBPACK_IMPORTED_MODULE_12__["MatChipsModule"],
+            _angular_material__WEBPACK_IMPORTED_MODULE_12__["MatIconModule"],
+            _angular_material__WEBPACK_IMPORTED_MODULE_12__["MatFormFieldModule"],
+            _angular_material__WEBPACK_IMPORTED_MODULE_12__["MatInputModule"],
+            _angular_material__WEBPACK_IMPORTED_MODULE_12__["MatSelectModule"],
+            _angular_material__WEBPACK_IMPORTED_MODULE_12__["MatAutocompleteModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_10__["ReactiveFormsModule"]
         ],
         providers: [_itemlist_service__WEBPACK_IMPORTED_MODULE_5__["ItemlistService"]],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
@@ -429,6 +447,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
+/* harmony import */ var rxjs_internal_operators_map__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/internal/operators/map */ "./node_modules/rxjs/internal/operators/map.js");
+/* harmony import */ var rxjs_internal_operators_map__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(rxjs_internal_operators_map__WEBPACK_IMPORTED_MODULE_4__);
+
+
 
 
 
@@ -438,9 +461,36 @@ let ItemlistService = class ItemlistService {
         // tslint:disable-next-line:no-inferrable-types
         // tslint:disable-next-line:variable-name
         this._url = 'https://raw.githubusercontent.com/ummeq/ummeq.github.io/master/assets/data/products.json';
+        this.Mainurl = 'https://raw.githubusercontent.com/ummeq/ummeq.github.io/master/assets/data/main_products_list';
+        this.PARAMS = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpParams"]({
+            fromObject: {
+                action: 'mainproducts',
+                format: 'json',
+                origin: '*'
+            }
+        });
     }
     getItemList() {
         return this.http.get(this._url);
+    }
+    // getMainItemList(item: string): Observable<MProducts[]> {
+    //   return this.http.get(this.main_url,)
+    // }
+    // search(term: string) {
+    //   if (term === '') {
+    //     return of([]);
+    //   }
+    //   return this.http
+    //     .get(this.Mainurl, {params: this.PARAMS.set('search', term)}).pipe(
+    //       map(response => response[1])
+    //     );
+    // }
+    search(term) {
+        if (term === '') {
+            return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["of"])([]);
+        }
+        return this.http
+            .get(this.Mainurl, { params: this.PARAMS.set('search', term) }).pipe(Object(rxjs_internal_operators_map__WEBPACK_IMPORTED_MODULE_4__["map"])(response => response[1]));
     }
 };
 ItemlistService.ctorParameters = () => [
@@ -490,10 +540,6 @@ let ProductsListComponent = class ProductsListComponent {
         this.itemService = itemService;
     }
     ngOnInit() {
-        // this.itemService.getItemList()
-        // .subscribe(data => {
-        //   this.product_list = data;
-        // });
         this.itemService.getItemList()
             .subscribe(products => {
             this.products = products;
@@ -541,13 +587,83 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SearchProductsComponent", function() { return SearchProductsComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
+/* harmony import */ var _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/cdk/keycodes */ "./node_modules/@angular/cdk/esm2015/keycodes.js");
+
+
+
 
 
 let SearchProductsComponent = class SearchProductsComponent {
-    constructor() { }
-    ngOnInit() {
+    constructor() {
+        // model: any;
+        // searching = false;
+        // searchFailed = false;
+        // constructor(private itemService: ItemlistService) { }
+        //ngOnInit() {
+        //   this.itemService.getItemList()
+        //   .subscribe(products => {
+        //     this.products = products;
+        //     this.filteredProducts = this.products.products;
+        // }, error => this.errorMessage = error);
+        // }
+        //}
+        this.visible = true;
+        this.selectable = true;
+        this.removable = true;
+        this.addOnBlur = false;
+        this.separatorKeysCodes = [_angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_4__["ENTER"], _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_4__["COMMA"]];
+        this.productCtrl = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]();
+        this.Products = [
+            '#Shoes',
+            '#Sandals'
+        ];
+        this.allProducts = [
+            '#Shoes',
+            '#Sandals',
+        ];
+        this.filtereProducts = this.productCtrl.valueChanges.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["startWith"])(null), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])((products) => products ? this.filter(products) : this.allProducts.slice()));
+    }
+    add(event) {
+        const input = event.input;
+        const value = event.value;
+        // Add our products
+        if ((value || '').trim()) {
+            this.Products.push(value.trim());
+        }
+        // Reset the input value
+        if (input) {
+            input.value = '';
+        }
+        this.productCtrl.setValue(null);
+    }
+    remove(products) {
+        const index = this.Products.indexOf(products);
+        if (index >= 0) {
+            this.Products.splice(index, 1);
+        }
+    }
+    filter(name) {
+        return this.allProducts.filter(products => products.toLowerCase().indexOf(name.toLowerCase()) === 0);
+    }
+    selected(event) {
+        alert("hhh11");
+        this.Products.push(event.option.viewValue);
+        this.productInput.nativeElement.value = '';
+        this.productCtrl.setValue(null);
+    }
+    onKey(event) {
+        this.values += event.target.value + ' | ';
+        alert(event);
+    }
+    onFoodSelection1() {
+        alert("hhh");
     }
 };
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('productInput', { static: false })
+], SearchProductsComponent.prototype, "productInput", void 0);
 SearchProductsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-search-products',
@@ -600,19 +716,22 @@ const environment = {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/platform-browser-dynamic */ "./node_modules/@angular/platform-browser-dynamic/fesm2015/platform-browser-dynamic.js");
-/* harmony import */ var _app_app_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app/app.module */ "./src/app/app.module.ts");
-/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var hammerjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! hammerjs */ "./node_modules/hammerjs/hammer.js");
+/* harmony import */ var hammerjs__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(hammerjs__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/platform-browser-dynamic */ "./node_modules/@angular/platform-browser-dynamic/fesm2015/platform-browser-dynamic.js");
+/* harmony import */ var _app_app_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app/app.module */ "./src/app/app.module.ts");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./environments/environment */ "./src/environments/environment.ts");
 
 
 
 
 
-if (_environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].production) {
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["enableProdMode"])();
+
+if (_environments_environment__WEBPACK_IMPORTED_MODULE_5__["environment"].production) {
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["enableProdMode"])();
 }
-Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__["platformBrowserDynamic"])().bootstrapModule(_app_app_module__WEBPACK_IMPORTED_MODULE_3__["AppModule"])
+Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_3__["platformBrowserDynamic"])().bootstrapModule(_app_app_module__WEBPACK_IMPORTED_MODULE_4__["AppModule"])
     .catch(err => console.error(err));
 
 
