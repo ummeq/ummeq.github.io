@@ -71,7 +71,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "\n  <div class=\"container\">\n        <app-search-products style=\"margin: 2em 0;\"></app-search-products>\n  \n     <div class=\"row product-list\" style=\"margin: 1em 0;\">\n        \n        <div class=\"col-sm-12 col-md-6 col-lg-4 product-list__item\" *ngFor=\"let product of products.products; let i = index;\">\n        <div class=\"card mb-4 shadow-sm pd-5\">\n          <div class=\"product-list__image\">\n           <img class=\"card-img-top\" src=\"{{product.image}}\" alt=\"Card image cap\">\n          </div>\n        <div class=\"card-body\">\n            <h4>{{product.name}}</h4>\n            <p class=\"card-text\">{{product.description}}</p>\n            </div>\n        </div>\n      </div>\n     \n\n    </div>\n  </div>  ";
+    __webpack_exports__["default"] = "\n  <div class=\"container\">\n        <app-search-products style=\"margin: 2em 0;\"></app-search-products>\n  \n     <div class=\"row product-list\" style=\"margin: 1em 0;\">\n        \n        <div class=\"col-sm-12 col-md-6 col-lg-4 product-list__item\" *ngFor=\"let product of filteredProducts; let i = index;\">\n        <div class=\"card mb-4 shadow-sm pd-5\">\n          <div class=\"product-list__image\">\n           <img class=\"card-img-top\" src=\"{{product.image}}\" alt=\"Card image cap\">\n          </div>\n        <div class=\"card-body\">\n            <h4>{{product.name}}</h4>\n            <p class=\"card-text\">{{product.description}}</p>\n            </div>\n        </div>\n      </div>\n     \n\n    </div>\n  </div>  ";
     /***/
   },
 
@@ -1005,8 +1005,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function ngOnInit() {
           var _this = this;
 
-          this.itemService.getItemList().subscribe(function (data) {
-            _this.products = data;
+          // this.itemService.getItemList()
+          // .subscribe(data => {
+          //   this.product_list = data;
+          // });
+          this.itemService.getItemList().subscribe(function (products) {
+            _this.products = products;
+            _this.filteredProducts = _this.products.products;
+          }, function (error) {
+            return _this.errorMessage = error;
           });
         }
       }]);

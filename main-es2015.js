@@ -45,7 +45,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n  <div class=\"container\">\n        <app-search-products style=\"margin: 2em 0;\"></app-search-products>\n  \n     <div class=\"row product-list\" style=\"margin: 1em 0;\">\n        \n        <div class=\"col-sm-12 col-md-6 col-lg-4 product-list__item\" *ngFor=\"let product of products.products; let i = index;\">\n        <div class=\"card mb-4 shadow-sm pd-5\">\n          <div class=\"product-list__image\">\n           <img class=\"card-img-top\" src=\"{{product.image}}\" alt=\"Card image cap\">\n          </div>\n        <div class=\"card-body\">\n            <h4>{{product.name}}</h4>\n            <p class=\"card-text\">{{product.description}}</p>\n            </div>\n        </div>\n      </div>\n     \n\n    </div>\n  </div>  ");
+/* harmony default export */ __webpack_exports__["default"] = ("\n  <div class=\"container\">\n        <app-search-products style=\"margin: 2em 0;\"></app-search-products>\n  \n     <div class=\"row product-list\" style=\"margin: 1em 0;\">\n        \n        <div class=\"col-sm-12 col-md-6 col-lg-4 product-list__item\" *ngFor=\"let product of filteredProducts; let i = index;\">\n        <div class=\"card mb-4 shadow-sm pd-5\">\n          <div class=\"product-list__image\">\n           <img class=\"card-img-top\" src=\"{{product.image}}\" alt=\"Card image cap\">\n          </div>\n        <div class=\"card-body\">\n            <h4>{{product.name}}</h4>\n            <p class=\"card-text\">{{product.description}}</p>\n            </div>\n        </div>\n      </div>\n     \n\n    </div>\n  </div>  ");
 
 /***/ }),
 
@@ -490,10 +490,15 @@ let ProductsListComponent = class ProductsListComponent {
         this.itemService = itemService;
     }
     ngOnInit() {
+        // this.itemService.getItemList()
+        // .subscribe(data => {
+        //   this.product_list = data;
+        // });
         this.itemService.getItemList()
-            .subscribe(data => {
-            this.products = data;
-        });
+            .subscribe(products => {
+            this.products = products;
+            this.filteredProducts = this.products.products;
+        }, error => this.errorMessage = error);
     }
 };
 ProductsListComponent.ctorParameters = () => [
