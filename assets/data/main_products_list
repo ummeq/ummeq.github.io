@@ -1,0 +1,12 @@
+{
+    "mainproducts": [
+      {
+        "id": "SH001",
+        "name": "Shoes"
+      },
+      {
+        "id": "SA002",
+        "name": "Sandals"
+      }
+    ]
+}
