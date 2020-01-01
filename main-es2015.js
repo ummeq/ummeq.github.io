@@ -437,7 +437,7 @@ let ItemlistService = class ItemlistService {
         this.http = http;
         // tslint:disable-next-line:no-inferrable-types
         // tslint:disable-next-line:variable-name
-        this._url = '/assets/data/products.json';
+        this._url = 'https://raw.githubusercontent.com/ummeq/ummeq.github.io/master/assets/data/products.json';
     }
     getItemList() {
         return this.http.get(this._url);
