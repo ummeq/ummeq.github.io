@@ -3,7 +3,7 @@
       {
         "id": "001",
         "name": "White Gray Flat Shoes",
-        "main_product_id":"SA002",
+        "main_product_id":"#Sandals",
         "price": 3000,
         "image": "https://images.pexels.com/photos/1598508/pexels-photo-1598508.jpeg?cs=srgb&dl=brand-design-fashion-1598508.jpg&fm=jpg",
         "description": "White gray flat shoes."
@@ -12,7 +12,7 @@
         "id": "002",
         "name": "Brown Formal Flat Shoes",
         "price": 3999,
-        "main_product_id":"SA002",
+        "main_product_id":"#Sandals",
         "image": "https://images.pexels.com/photos/186035/pexels-photo-186035.jpeg?cs=srgb&dl=field-footwear-grass-186035.jpg&fm=jpg",
         "description": "Brown stylish formal flat shoes."
       },
@@ -20,7 +20,7 @@
         "id": "003",
         "name": "White Queen heels",
         "price": 11999,
-        "main_product_id":"SA002",
+        "main_product_id":"#Sandals",
         "image": "https://images.pexels.com/photos/137603/pexels-photo-137603.jpeg?cs=srgb&dl=bow-elegant-fashion-fashionable-137603.jpg&fm=jpg",
         "description": "White Daimond heels."
       },
@@ -28,7 +28,7 @@
         "id": "004",
         "name": "Pairs of Sandals",
         "price": 24000,
-        "main_product_id":"SA002",
+        "main_product_id":"#Sandals",
         "image": "https://images.pexels.com/photos/1116976/pexels-photo-1116976.jpeg?cs=srgb&dl=two-pairs-of-sandals-on-wood-floor-1116976.jpg&fm=jpg",
         "description": "Beautiful twins pair of sandals."
       },
@@ -36,7 +36,7 @@
         "id": "005",
         "name": "Black and white sandals",
         "price": 41000,
-        "main_product_id":"SA002",
+        "main_product_id":"#Sandals",
         "image": "https://images.pexels.com/photos/267309/pexels-photo-267309.jpeg?cs=srgb&dl=black-and-white-close-up-fashion-field-267309.jpg&fm=jpg",
         "description": "combination of white and black sandals."
       },
@@ -44,7 +44,7 @@
         "id": "006",
         "name": "Swing SA002",
         "price": 15400,
-        "main_product_id":"SH001",
+        "main_product_id":"#Shoes",
         "image": "https://images.pexels.com/photos/1507351/pexels-photo-1507351.jpeg?cs=srgb&dl=woman-swinging-her-foot-above-pool-water-1507351.jpg&fm=jpg",
         "description": "attracting swing heels."
       },
@@ -52,7 +52,7 @@
         "id": "007",
         "name": "Red Shoes",
         "price": 15400,
-        "main_product_id":"SH001",
+        "main_product_id":"#Shoes",
         "image": "https://images.pexels.com/photos/1307128/pexels-photo-1307128.jpeg?cs=srgb&dl=close-up-colors-dark-1307128.jpg&fm=jpg",
         "description": "red-nike-basketball-shoes."
       },
@@ -60,7 +60,7 @@
         "id": "008",
         "name": "Red Boys Shoes",
         "price": 15400,
-        "main_product_id":"SH001",
+        "main_product_id":"#Shoes",
         "image": "https://images.pexels.com/photos/2016146/pexels-photo-2016146.jpeg?cs=srgb&dl=person-wearing-red-shoes-2016146.jpg&fm=jpg",
         "description": "Stylish Red Shoes."
       },
@@ -68,7 +68,7 @@
         "id": "009",
         "name": "Sports shoes",
         "price": 15400,
-        "main_product_id":"SH001",
+        "main_product_id":"#Shoes",
         "image": "https://images.pexels.com/photos/1124466/pexels-photo-1124466.jpeg?cs=srgb&dl=black-blurred-background-close-up-1124466.jpg&fm=jpg",
         "description": "Nike-Running-Shoes."
       },
@@ -76,7 +76,7 @@
         "id": "010",
         "name": "Merrell Hiking Shoes",
         "price": 15400,
-        "main_product_id":"SH001",
+        "main_product_id":"#Shoes",
         "image": "https://images.pexels.com/photos/40662/shoes-footwear-hiking-shoes-walking-40662.jpeg?cs=srgb&dl=activity-advrtising-brand-40662.jpg&fm=jpg",
         "description": "Brown and black merrell hiking shoes."
       }
