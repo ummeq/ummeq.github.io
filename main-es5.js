@@ -1283,10 +1283,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.Products.push(event.option.viewValue);
 
-          if (this.Products.length === 2) {
+          if (this.Products.length === 0) {
+            this.subProducts = this.allProducts;
+          } else if (this.Products.length === 2) {
             // if both option selected 
-            this.allProducts = [];
-            this.filterDropdown(this.allProducts);
+            this.filterDropdown([]);
             this.subProducts = this.shoesProduct.concat(this.sandalProduct);
           } else {
             if (this.Products.indexOf('#Shoes') !== -1) {
@@ -1299,6 +1300,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             }
           }
 
+          this.searchedProducts = [];
           this.itemService.getItemList().subscribe(function (itemList) {
             _this2.Products.forEach(function (searchString) {
               itemList.products.filter(function (i) {
@@ -1326,9 +1328,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             if (this.Products.length === 0) {
               this.searchedProducts = [];
-              this.selectedProducts.emit(this.searchedProducts);
-              this.filterDropdown(this.searchedProducts);
               this.subProducts = [];
+              this.filterDropdown(this.allProducts);
+              this.selectedProducts.emit(this.searchedProducts);
             } else {
               if (this.Products.indexOf('#Shoes') !== -1) {
                 // if selected item is #shoes
@@ -1340,6 +1342,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               }
 
               this.filterDropdown(this.selectProd);
+              this.searchedProducts = [];
               this.itemService.getItemList().subscribe(function (itemList) {
                 _this3.Products.forEach(function (searchString) {
                   itemList.products.filter(function (i) {

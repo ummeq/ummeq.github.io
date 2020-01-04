@@ -677,9 +677,11 @@ let SearchProductsComponent = class SearchProductsComponent {
     // function after selecting dropdown
     selected(event) {
         this.Products.push(event.option.viewValue);
-        if (this.Products.length === 2) { // if both option selected 
-            this.allProducts = [];
-            this.filterDropdown(this.allProducts);
+        if (this.Products.length === 0) {
+            this.subProducts = this.allProducts;
+        }
+        else if (this.Products.length === 2) { // if both option selected 
+            this.filterDropdown([]);
             this.subProducts = this.shoesProduct.concat(this.sandalProduct);
         }
         else {
@@ -692,6 +694,7 @@ let SearchProductsComponent = class SearchProductsComponent {
                 this.subProducts = this.sandalProduct;
             }
         }
+        this.searchedProducts = [];
         this.itemService.getItemList().subscribe((itemList) => {
             this.Products.forEach((searchString) => {
                 itemList.products.filter(i => (i.main_product_id.toUpperCase() === searchString.toUpperCase())).map((i) => {
@@ -710,9 +713,9 @@ let SearchProductsComponent = class SearchProductsComponent {
             this.Products.splice(index, 1);
             if (this.Products.length === 0) {
                 this.searchedProducts = [];
-                this.selectedProducts.emit(this.searchedProducts);
-                this.filterDropdown(this.searchedProducts);
                 this.subProducts = [];
+                this.filterDropdown(this.allProducts);
+                this.selectedProducts.emit(this.searchedProducts);
             }
             else {
                 if (this.Products.indexOf('#Shoes') !== -1) { // if selected item is #shoes
@@ -724,6 +727,7 @@ let SearchProductsComponent = class SearchProductsComponent {
                     this.subProducts = this.sandalProduct;
                 }
                 this.filterDropdown(this.selectProd);
+                this.searchedProducts = [];
                 this.itemService.getItemList().subscribe((itemList) => {
                     this.Products.forEach((searchString) => {
                         itemList.products.filter(i => (i.main_product_id.toUpperCase() === searchString.toUpperCase())).map((i) => {
