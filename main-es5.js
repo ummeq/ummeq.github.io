@@ -71,7 +71,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "\n  <div class=\"container\">\n        <app-search-products style=\"margin: 2em 0;\"></app-search-products>\n  \n     <div class=\"row product-list\" style=\"margin: 1em 0;\">\n        \n        <div class=\"col-sm-12 col-md-6 col-lg-4 product-list__item\" *ngFor=\"let product of filteredProducts; let i = index;\">\n        <div class=\"card mb-4 shadow-sm pd-5\">\n          <div class=\"product-list__image\">\n           <img class=\"card-img-top\" src=\"{{product.image}}\" alt=\"Card image cap\">\n          </div>\n        <div class=\"card-body\">\n            <h4>{{product.name}}</h4>\n            <p class=\"card-text\">{{product.description}}</p>\n            </div>\n        </div>\n      </div>\n     \n\n    </div>\n  </div>  ";
+    __webpack_exports__["default"] = "\n  <div class=\"container\">\n        <app-search-products style=\"margin: 2em 0;\" (selectedProducts) = \"selectedProductList($event)\"></app-search-products>\n        <!-- <app-sub-product-templates [SubProductTemplate] = \"mainProducts\" (click)=\"test()\"></app-sub-product-templates> -->\n     <div class=\"row product-list\" style=\"margin: 1em 0;\">\n        \n        <div class=\"col-sm-12 col-md-6 col-lg-4 product-list__item\" *ngFor=\"let product of filteredProducts; let i = index;\">\n        <div class=\"card mb-4 shadow-sm pd-5\">\n          <div class=\"product-list__image\">\n           <img class=\"card-img-top\" src=\"{{product.image}}\" alt=\"Card image cap\">\n          </div>\n        <div class=\"card-body\">\n            <h4>{{product.name}}</h4>\n            <p class=\"card-text\">{{product.description}}</p>\n            </div>\n        </div>\n      </div>\n     \n\n    </div>\n  </div>  ";
     /***/
   },
 
@@ -91,7 +91,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "\n<mat-form-field class=\"demo-chip-list\">\n  <mat-chip-list #chipList>\n    <mat-chip\n      *ngFor=\"let product of Products\"\n      [selectable]=\"selectable\"\n      [removable]=\"removable\"\n      (removed)=\"remove(product)\">\n      {{product}}\n      <mat-icon matChipRemove *ngIf=\"removable\">cancel</mat-icon>\n    </mat-chip>\n    <input\n      placeholder=\"Whats Your choice...\"\n      #productInput\n      [formControl]=\"productCtrl\"\n      [matAutocomplete]=\"auto\"\n      [matChipInputFor]=\"chipList\"\n      [matChipInputSeparatorKeyCodes]=\"separatorKeysCodes\"\n      [matChipInputAddOnBlur]=\"addOnBlur\"\n      (matChipInputTokenEnd)=\"add($event)\"\n      \n    />\n  </mat-chip-list>\n  <mat-autocomplete #auto=\"matAutocomplete\" (optionSelected)=\"selected($event)\" >\n    <mat-option *ngFor=\"let product of filtereProducts | async\" [value]=\"product\" (change)=\"onFoodSelection1()\">\n      {{ product }}\n    </mat-option>\n  </mat-autocomplete>\n</mat-form-field>\n\n";
+    __webpack_exports__["default"] = "\n<mat-form-field class=\"demo-chip-list\">\n  <mat-chip-list #chipList>\n     <mat-chip\n      *ngFor=\"let product of Products\"\n      [selectable]=\"selectable\"\n      [removable]=\"removable\"\n      (removed)=\"remove(product)\"\n      color=\"accent\" \n      >\n      {{product}}\n      <mat-icon matChipRemove *ngIf=\"removable\" class=\"mat-chip-category\">cancel</mat-icon>\n    </mat-chip> \n    <input\n      placeholder=\"Whats Your choice...\"\n      #productInput\n      [formControl]=\"productCtrl\"\n      [matAutocomplete]=\"auto\"\n      [matChipInputFor]=\"chipList\"\n      [matChipInputSeparatorKeyCodes]=\"separatorKeysCodes\"\n      [matChipInputAddOnBlur]=\"addOnBlur\"\n      (matChipInputTokenEnd)=\"add($event)\"\n      \n      \n    />\n  </mat-chip-list>\n  <mat-autocomplete #auto=\"matAutocomplete\" (optionSelected)=\"selected($event)\" >\n    <mat-option *ngFor=\"let product of filtereProducts | async\" [value]=\"product\" >\n      {{ product }}\n    </mat-option>\n  </mat-autocomplete>\n</mat-form-field>\n<div class=\"container\">\n    <div class=\"row product-list\" style=\"margin: 1em 0;\">\n        <div class=\"col-md-6 col-lg-3 product-list__item\"\n            *ngFor=\"let subprod of subProducts; let i = index;\">\n            <button type=\"button\" class=\"btn btn-warning btn-lg btn-block\"><h4>{{subprod}}</h4></button>\n        </div>\n    </div>\n</div>\n<div class=\"container\">\n    <div class=\"row\">\n        <div class=\"col-md-6 align-center\">\n            <h4>200K</h4>\n            <h4>Number of People talking <br> about #fashion, #shoes</h4>\n        </div>\n        <div class=\"col-md-6 align-center\">\n                <h4>20K</h4>\n                <h4>Number of Kofluence influencers talking <br> about #fashion, #shoes</h4>\n        </div>\n    </div>\n    <div class=\"row\">\n    <div class=\"col-md-6 align-center\">\n            <h4 style=\"color:orange\">Top Post</h4>\n            <hr>\n    </div>\n    <div class=\"col-md-6 align-center\">\n            <h4 style=\"color:orange\">Latest Post</h4>\n            <hr>\n    </div>\n  </div>\n</div>\n\n\n\n\n\n";
+    /***/
+  },
+
+  /***/
+  "./node_modules/raw-loader/dist/cjs.js!./src/app/sub-product-templates/sub-product-templates.component.html":
+  /*!******************************************************************************************************************!*\
+    !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/sub-product-templates/sub-product-templates.component.html ***!
+    \******************************************************************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function node_modulesRawLoaderDistCjsJsSrcAppSubProductTemplatesSubProductTemplatesComponentHtml(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = " <div class=\"container\">\n    <div class=\"row product-list\" style=\"margin: 1em 0;\">\n        <div class=\"col-md-6 col-lg-3 product-list__item\"\n            *ngFor=\"let subprod of subProducts; let i = index;\">\n            <button type=\"button\" class=\"btn btn-warning btn-lg btn-block\"><h4>{{subprod}}</h4></button>\n        </div>\n    </div>\n</div>\n<div class=\"container\">\n    <div class=\"row\">\n        <div class=\"col-md-6 align-center\">\n            <h4>200K</h4>\n            <h4>Number of People talking <br> about #fashion, #shoes</h4>\n        </div>\n        <div class=\"col-md-6 align-center\">\n                <h4>20K</h4>\n                <h4>Number of Kofluence influencers talking <br> about #fashion, #shoes</h4>\n        </div>\n    </div>\n    <div class=\"row\">\n    <div class=\"col-md-6 align-center\">\n            <h4 style=\"color:orange\">Top Post</h4>\n            <hr>\n    </div>\n    <div class=\"col-md-6 align-center\">\n            <h4 style=\"color:orange\">Latest Post</h4>\n            <hr>\n    </div>\n  </div>\n</div>\n\n\n";
     /***/
   },
 
@@ -871,13 +891,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _angular_material__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
     /*! @angular/material */
     "./node_modules/@angular/material/esm2015/material.js");
+    /* harmony import */
+
+
+    var _sub_product_templates_sub_product_templates_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
+    /*! ./sub-product-templates/sub-product-templates.component */
+    "./src/app/sub-product-templates/sub-product-templates.component.ts");
 
     var AppModule = function AppModule() {
       _classCallCheck(this, AppModule);
     };
 
     AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
-      declarations: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"], _products_list_products_list_component__WEBPACK_IMPORTED_MODULE_7__["ProductsListComponent"], _search_products_search_products_component__WEBPACK_IMPORTED_MODULE_8__["SearchProductsComponent"]],
+      declarations: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"], _products_list_products_list_component__WEBPACK_IMPORTED_MODULE_7__["ProductsListComponent"], _search_products_search_products_component__WEBPACK_IMPORTED_MODULE_8__["SearchProductsComponent"], _sub_product_templates_sub_product_templates_component__WEBPACK_IMPORTED_MODULE_13__["SubProductTemplatesComponent"]],
       imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HttpClientModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_10__["FormsModule"], _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_9__["NgbModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_11__["BrowserAnimationsModule"], _angular_material__WEBPACK_IMPORTED_MODULE_12__["MatChipsModule"], _angular_material__WEBPACK_IMPORTED_MODULE_12__["MatIconModule"], _angular_material__WEBPACK_IMPORTED_MODULE_12__["MatFormFieldModule"], _angular_material__WEBPACK_IMPORTED_MODULE_12__["MatInputModule"], _angular_material__WEBPACK_IMPORTED_MODULE_12__["MatSelectModule"], _angular_material__WEBPACK_IMPORTED_MODULE_12__["MatAutocompleteModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_10__["ReactiveFormsModule"]],
       providers: [_itemlist_service__WEBPACK_IMPORTED_MODULE_5__["ItemlistService"]],
       bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
@@ -949,8 +975,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         this.http = http; // tslint:disable-next-line:no-inferrable-types
         // tslint:disable-next-line:variable-name
+        // private _url = 'https://raw.githubusercontent.com/ummeq/ummeq.github.io/master/assets/data/products.json';
+        // tslint:disable-next-line:variable-name
 
-        this._url = 'https://raw.githubusercontent.com/ummeq/ummeq.github.io/master/assets/data/products.json';
+        this._url = 'https://raw.githubusercontent.com/ummeq/ummeq.github.io/master/assets/data/sub_products_list';
         this.Mainurl = 'https://raw.githubusercontent.com/ummeq/ummeq.github.io/master/assets/data/main_products_list';
         this.PARAMS = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpParams"]({
           fromObject: {
@@ -1073,6 +1101,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         _classCallCheck(this, ProductsListComponent);
 
         this.itemService = itemService;
+        this.allProducts = ['#Shoes', '#Sandals'];
       }
 
       _createClass(ProductsListComponent, [{
@@ -1086,6 +1115,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           }, function (error) {
             return _this.errorMessage = error;
           });
+          this.mainProducts = this.allProducts;
+        } // function to display product list
+
+      }, {
+        key: "selectedProductList",
+        value: function selectedProductList(event) {
+          this.mainProducts = this.filteredProducts = [];
+          this.filteredProducts = event;
+          this.mainProducts = event;
         }
       }]);
 
@@ -1126,7 +1164,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3NlYXJjaC1wcm9kdWN0cy9zZWFyY2gtcHJvZHVjdHMuY29tcG9uZW50LmNzcyJ9 */";
+    __webpack_exports__["default"] = ".example-chip-list {\r\n    width: 100%;\r\n  }\r\n\r\n  .align-center{\r\n    text-align:center\r\n}\r\n\r\n  .mat-chip-category { \r\n  background-color: mat-color($accent) !important; \r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvc2VhcmNoLXByb2R1Y3RzL3NlYXJjaC1wcm9kdWN0cy5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksV0FBVztFQUNiOztFQUVBO0lBQ0U7QUFDSjs7RUFFQTtFQUNFLCtDQUErQztBQUNqRCIsImZpbGUiOiJzcmMvYXBwL3NlYXJjaC1wcm9kdWN0cy9zZWFyY2gtcHJvZHVjdHMuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5leGFtcGxlLWNoaXAtbGlzdCB7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICB9XHJcblxyXG4gIC5hbGlnbi1jZW50ZXJ7XHJcbiAgICB0ZXh0LWFsaWduOmNlbnRlclxyXG59XHJcblxyXG4ubWF0LWNoaXAtY2F0ZWdvcnkgeyBcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiBtYXQtY29sb3IoJGFjY2VudCkgIWltcG9ydGFudDsgXHJcbn0iXX0= */";
     /***/
   },
 
@@ -1164,56 +1202,56 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    var _itemlist_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! ../itemlist.service */
+    "./src/app/itemlist.service.ts");
+    /* harmony import */
+
+
+    var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! @angular/forms */
     "./node_modules/@angular/forms/fesm2015/forms.js");
     /* harmony import */
 
 
-    var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! rxjs/operators */
     "./node_modules/rxjs/_esm2015/operators/index.js");
     /* harmony import */
 
 
-    var _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    var _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! @angular/cdk/keycodes */
     "./node_modules/@angular/cdk/esm2015/keycodes.js");
 
     var SearchProductsComponent =
     /*#__PURE__*/
     function () {
-      function SearchProductsComponent() {
-        var _this2 = this;
-
+      function SearchProductsComponent(itemService) {
         _classCallCheck(this, SearchProductsComponent);
 
-        // model: any;
-        // searching = false;
-        // searchFailed = false;
-        // constructor(private itemService: ItemlistService) { }
-        //ngOnInit() {
-        //   this.itemService.getItemList()
-        //   .subscribe(products => {
-        //     this.products = products;
-        //     this.filteredProducts = this.products.products;
-        // }, error => this.errorMessage = error);
-        // }
-        //}
+        this.itemService = itemService;
+        this.SelectedValue = [];
         this.visible = true;
         this.selectable = true;
         this.removable = true;
         this.addOnBlur = false;
-        this.separatorKeysCodes = [_angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_4__["ENTER"], _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_4__["COMMA"]];
-        this.productCtrl = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]();
+        this.separatorKeysCodes = [_angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_5__["ENTER"], _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_5__["COMMA"]];
+        this.productCtrl = new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"]();
         this.Products = ['#Shoes', '#Sandals'];
         this.allProducts = ['#Shoes', '#Sandals'];
-        this.filtereProducts = this.productCtrl.valueChanges.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["startWith"])(null), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (products) {
-          return products ? _this2.filter(products) : _this2.allProducts.slice();
-        }));
+        this.shoesProduct = ['#sportshoes', '#redshoes'];
+        this.sandalProduct = ['#flatshoes', '#heels'];
+        this.searchedProducts = [];
+        this.selectedProducts = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
       }
 
       _createClass(SearchProductsComponent, [{
+        key: "ngOnInit",
+        value: function ngOnInit() {
+          this.subProducts = this.shoesProduct.concat(this.sandalProduct);
+        }
+      }, {
         key: "add",
         value: function add(event) {
           var input = event.input;
@@ -1231,48 +1269,115 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.productCtrl.setValue(null);
         }
       }, {
-        key: "remove",
-        value: function remove(products) {
-          var index = this.Products.indexOf(products);
-
-          if (index >= 0) {
-            this.Products.splice(index, 1);
-          }
-        }
-      }, {
         key: "filter",
         value: function filter(name) {
           return this.allProducts.filter(function (products) {
             return products.toLowerCase().indexOf(name.toLowerCase()) === 0;
           });
-        }
+        } // function after selecting dropdown
+
       }, {
         key: "selected",
         value: function selected(event) {
-          alert("hhh11");
+          var _this2 = this;
+
           this.Products.push(event.option.viewValue);
+
+          if (this.Products.length === 2) {
+            // if both option selected 
+            this.allProducts = [];
+            this.filterDropdown(this.allProducts);
+            this.subProducts = this.shoesProduct.concat(this.sandalProduct);
+          } else {
+            if (this.Products.indexOf('#Shoes') !== -1) {
+              // if there is shoes in dropdown list
+              this.selectProd = ['#Sandals'];
+              this.subProducts = this.shoesProduct;
+            } else {
+              this.selectProd = ['#Shoes'];
+              this.subProducts = this.sandalProduct;
+            }
+          }
+
+          this.itemService.getItemList().subscribe(function (itemList) {
+            _this2.Products.forEach(function (searchString) {
+              itemList.products.filter(function (i) {
+                return i.main_product_id.toUpperCase() === searchString.toUpperCase();
+              }).map(function (i) {
+                _this2.searchedProducts.push(i);
+              });
+            });
+          });
+          this.selectedProducts.emit(this.searchedProducts);
           this.productInput.nativeElement.value = '';
           this.productCtrl.setValue(null);
-        }
+        } // function to remove selected tag
+
       }, {
-        key: "onKey",
-        value: function onKey(event) {
-          this.values += event.target.value + ' | ';
-          alert(event);
-        }
+        key: "remove",
+        value: function remove(products) {
+          var _this3 = this;
+
+          var index = this.Products.indexOf(products);
+
+          if (index >= 0) {
+            // if index value is greter than 1 then remove item
+            this.Products.splice(index, 1);
+
+            if (this.Products.length === 0) {
+              this.searchedProducts = [];
+              this.selectedProducts.emit(this.searchedProducts);
+              this.filterDropdown(this.searchedProducts);
+              this.subProducts = [];
+            } else {
+              if (this.Products.indexOf('#Shoes') !== -1) {
+                // if selected item is #shoes
+                this.selectProd = ['#Sandals'];
+                this.subProducts = this.shoesProduct;
+              } else {
+                this.selectProd = ['#Shoes'];
+                this.subProducts = this.sandalProduct;
+              }
+
+              this.filterDropdown(this.selectProd);
+              this.itemService.getItemList().subscribe(function (itemList) {
+                _this3.Products.forEach(function (searchString) {
+                  itemList.products.filter(function (i) {
+                    return i.main_product_id.toUpperCase() === searchString.toUpperCase();
+                  }).map(function (i) {
+                    _this3.searchedProducts.push(i);
+                  });
+                });
+              });
+              this.selectedProducts.emit(this.searchedProducts);
+            }
+          }
+        } // function to filter dropdown
+
       }, {
-        key: "onFoodSelection1",
-        value: function onFoodSelection1() {
-          alert("hhh");
+        key: "filterDropdown",
+        value: function filterDropdown(productList) {
+          var _this4 = this;
+
+          this.filtereProducts = this.productCtrl.valueChanges.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["startWith"])(null), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (products) {
+            return products ? _this4.filter(products) : productList.slice();
+          }));
         }
       }]);
 
       return SearchProductsComponent;
     }();
 
+    SearchProductsComponent.ctorParameters = function () {
+      return [{
+        type: _itemlist_service__WEBPACK_IMPORTED_MODULE_2__["ItemlistService"]
+      }];
+    };
+
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('productInput', {
       static: false
     })], SearchProductsComponent.prototype, "productInput", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])()], SearchProductsComponent.prototype, "selectedProducts", void 0);
     SearchProductsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
       selector: 'app-search-products',
       template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
@@ -1282,6 +1387,91 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       /*! ./search-products.component.css */
       "./src/app/search-products/search-products.component.css")).default]
     })], SearchProductsComponent);
+    /***/
+  },
+
+  /***/
+  "./src/app/sub-product-templates/sub-product-templates.component.css":
+  /*!***************************************************************************!*\
+    !*** ./src/app/sub-product-templates/sub-product-templates.component.css ***!
+    \***************************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function srcAppSubProductTemplatesSubProductTemplatesComponentCss(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = ".align-center{\r\n    text-align:center\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvc3ViLXByb2R1Y3QtdGVtcGxhdGVzL3N1Yi1wcm9kdWN0LXRlbXBsYXRlcy5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0k7QUFDSiIsImZpbGUiOiJzcmMvYXBwL3N1Yi1wcm9kdWN0LXRlbXBsYXRlcy9zdWItcHJvZHVjdC10ZW1wbGF0ZXMuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5hbGlnbi1jZW50ZXJ7XHJcbiAgICB0ZXh0LWFsaWduOmNlbnRlclxyXG59Il19 */";
+    /***/
+  },
+
+  /***/
+  "./src/app/sub-product-templates/sub-product-templates.component.ts":
+  /*!**************************************************************************!*\
+    !*** ./src/app/sub-product-templates/sub-product-templates.component.ts ***!
+    \**************************************************************************/
+
+  /*! exports provided: SubProductTemplatesComponent */
+
+  /***/
+  function srcAppSubProductTemplatesSubProductTemplatesComponentTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "SubProductTemplatesComponent", function () {
+      return SubProductTemplatesComponent;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+
+    var SubProductTemplatesComponent =
+    /*#__PURE__*/
+    function () {
+      function SubProductTemplatesComponent() {
+        _classCallCheck(this, SubProductTemplatesComponent);
+
+        this.shoesProduct = ['#sportshoes', '#redshoes'];
+        this.sandalProduct = ['#flatshoes', '#heels'];
+      }
+
+      _createClass(SubProductTemplatesComponent, [{
+        key: "ngOnInit",
+        value: function ngOnInit() {
+          this.subProducts = this.shoesProduct.concat(this.sandalProduct);
+        }
+      }]);
+
+      return SubProductTemplatesComponent;
+    }();
+
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()], SubProductTemplatesComponent.prototype, "SubProductTemplate", void 0);
+    SubProductTemplatesComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+      selector: 'app-sub-product-templates',
+      template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
+      /*! raw-loader!./sub-product-templates.component.html */
+      "./node_modules/raw-loader/dist/cjs.js!./src/app/sub-product-templates/sub-product-templates.component.html")).default,
+      styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
+      /*! ./sub-product-templates.component.css */
+      "./src/app/sub-product-templates/sub-product-templates.component.css")).default]
+    })], SubProductTemplatesComponent);
     /***/
   },
 
