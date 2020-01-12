@@ -2,10 +2,10 @@
     "products": [
       {
         "id": "001",
-        "name": "White Gray Flat Shoes",
+        "name": "White Gray Flat pretty Shoes ",
         "main_product_id":"#Sandals",
         "price": 3000,
-        "image": "![White_Gray_Flat_Shoes](https://user-images.githubusercontent.com/34029903/72217709-fe1d9580-3557-11ea-8f3f-2b025b45206d.jpg)",
+        "image": "https://user-images.githubusercontent.com/34029903/72217709-fe1d9580-3557-11ea-8f3f-2b025b45206d.jpg",
         "description": "White gray flat shoes."
       },
       {
