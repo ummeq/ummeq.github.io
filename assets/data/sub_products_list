@@ -13,7 +13,7 @@
         "name": "Brown Formal Flat Shoes",
         "price": 3999,
         "main_product_id":"#Sandals",
-        "image": "https://images.pexels.com/photos/186035/pexels-photo-186035.jpeg?cs=srgb&dl=field-footwear-grass-186035.jpg&fm=jpg",
+        "image": "https://user-images.githubusercontent.com/34029903/72218000-b436ae80-355b-11ea-9dd1-7fdbe0387cac.jpg",
         "description": "Brown stylish formal flat shoes."
       },
       {
@@ -21,7 +21,7 @@
         "name": "White Queen heels",
         "price": 11999,
         "main_product_id":"#Sandals",
-        "image": "https://images.pexels.com/photos/137603/pexels-photo-137603.jpeg?cs=srgb&dl=bow-elegant-fashion-fashionable-137603.jpg&fm=jpg",
+        "image": "https://user-images.githubusercontent.com/34029903/72218017-f9f37700-355b-11ea-8657-38c2f16a7dc3.jpg",
         "description": "White Daimond heels."
       },
       {
@@ -29,7 +29,7 @@
         "name": "Pairs of Sandals",
         "price": 24000,
         "main_product_id":"#Sandals",
-        "image": "https://images.pexels.com/photos/1116976/pexels-photo-1116976.jpeg?cs=srgb&dl=two-pairs-of-sandals-on-wood-floor-1116976.jpg&fm=jpg",
+        "image": "https://user-images.githubusercontent.com/34029903/72218025-14c5eb80-355c-11ea-911a-b5cb8dff7744.jpg",
         "description": "Beautiful twins pair of sandals."
       },
       {
@@ -37,15 +37,15 @@
         "name": "Black and white pretty sandals",
         "price": 41000,
         "main_product_id":"#Sandals",
-        "image": "https://images.pexels.com/photos/267309/pexels-photo-267309.jpeg?cs=srgb&dl=black-and-white-close-up-fashion-field-267309.jpg&fm=jpg",
+        "image": "https://user-images.githubusercontent.com/34029903/72218033-34f5aa80-355c-11ea-8aca-6e599a8f3486.jpg",
         "description": "combination of white and black sandals."
       },
       {
         "id": "006",
-        "name": "Swing SA002",
+        "name": "Swing Shoes",
         "price": 15400,
         "main_product_id":"#Shoes",
-        "image": "https://images.pexels.com/photos/1507351/pexels-photo-1507351.jpeg?cs=srgb&dl=woman-swinging-her-foot-above-pool-water-1507351.jpg&fm=jpg",
+        "image": "https://user-images.githubusercontent.com/34029903/72218046-59518700-355c-11ea-9ddb-0aec96002774.jpg",
         "description": "attracting swing heels."
       },
       {
@@ -53,7 +53,7 @@
         "name": "Red Shoes",
         "price": 15400,
         "main_product_id":"#Shoes",
-        "image": "https://images.pexels.com/photos/1307128/pexels-photo-1307128.jpeg?cs=srgb&dl=close-up-colors-dark-1307128.jpg&fm=jpg",
+        "image": "https://user-images.githubusercontent.com/34029903/72218057-7b4b0980-355c-11ea-851f-c7ae720d0855.jpg",
         "description": "red-nike-basketball-shoes."
       },
       {
@@ -61,7 +61,7 @@
         "name": "Red Boys Shoes",
         "price": 15400,
         "main_product_id":"#Shoes",
-        "image": "https://images.pexels.com/photos/2016146/pexels-photo-2016146.jpeg?cs=srgb&dl=person-wearing-red-shoes-2016146.jpg&fm=jpg",
+        "image": "https://user-images.githubusercontent.com/34029903/72218071-9ae23200-355c-11ea-82bc-3dcd69881f9f.jpg",
         "description": "Stylish Red Shoes."
       },
       {
@@ -69,7 +69,7 @@
         "name": "Sports shoes",
         "price": 15400,
         "main_product_id":"#Shoes",
-        "image": "https://images.pexels.com/photos/1124466/pexels-photo-1124466.jpeg?cs=srgb&dl=black-blurred-background-close-up-1124466.jpg&fm=jpg",
+        "image": "https://user-images.githubusercontent.com/34029903/72218076-b4837980-355c-11ea-89f8-1f3db8a37ebe.jpg",
         "description": "Nike-Running-Shoes."
       },
       {
@@ -77,7 +77,7 @@
         "name": "Merrell Hiking Shoes",
         "price": 15400,
         "main_product_id":"#Shoes",
-        "image": "https://images.pexels.com/photos/40662/shoes-footwear-hiking-shoes-walking-40662.jpeg?cs=srgb&dl=activity-advrtising-brand-40662.jpg&fm=jpg",
+        "image": "https://user-images.githubusercontent.com/34029903/72218086-d2e97500-355c-11ea-80d2-427fbc1ce9a8.jpg",
         "description": "Brown and black merrell hiking shoes."
       }
     ]
